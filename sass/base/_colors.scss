@@ -1,125 +1,232 @@
 @use "sass:map";
 $colors: (
-    "blue" : ("10" : #EDF5FF,
-        "20" : #d0e2ff,
-        "30":#a6c8ff,
-        "40":#78a9ff,
-        "50":#5699ff,
-        "60":#0f62fe,
-        "70":#0049ce,
-        "80":#002d9c,
-        "90":#001d6c,
-        "100":#001141),
-    "gray":("10":#f4f4f4,
-        "20":#e0e0e0,
-        "30":#c6c6c6,
-        "40":#a8a8a8,
-        "50":#8d8d8d,
-        "60":#525252,
-        "70":#525252,
-        "80":#393939,
-        "90":#262626,
-        "100":#161616),
-    "cool-gray":("10":#f2f4f8,
-        "20":#dde1e6,
-        "30":#c1c7cd,
-        "40":#a2a9b0,
-        "50":#878d96,
-        "60":#697077,
-        "70":#4d5358,
-        "80":#343a3f,
-        "90":#21272a,
-        "100":#121619),
-    "warm-gray":("10":#f7f3f2,
-        "20":#e5e0df,
-        "30":#cac5c4,
-        "40":#ada8a8,
-        "50":#8f8b8b,
-        "60":#726e6e,
-        "70":#565151,
-        "80":#3c3838,
-        "90":#272525,
-        "100":#171414),
-    "cyan":("10":#e5f6ff,
-        "20":#bae6ff,
-        "30":#82cfff,
-        "40":#33b1ff,
-        "50":#1192e8,
-        "60":#0072c3,
-        "70":#00539a,
-        "80":#003a6d,
-        "90":#012749,
-        "100":#061727),
-    "green":("10":#defbe6,
-        "20":#a7f0ba,
-        "30":#6fdc8c,
-        "40":#42be65,
-        "50":#24a148,
-        "60":#198038,
-        "70":#0e6027,
-        "80":#044317,
-        "90":#022d0d,
-        "100":#071908),
-    "magenta":("10":#fff0f7,
-        "20":#ffd6e8,
-        "30":#ffafd2,
-        "40":#ff7eb6,
-        "50":#ee5396,
-        "60":#d02670,
-        "70":#9f1853,
-        "80":#740937,
-        "90":#510224,
-        "100":#2a0a18),
-    "purple":("10":#f6f2ff,
-        "20":#e8daff,
-        "30":#d4bbff,
-        "40":#be95ff,
-        "50":#a56eff,
-        "60":#8a3ffc,
-        "70":#6929c4,
-        "80":#491d8b,
-        "90":#31135e,
-        "100":#1c0f30),
-    "red":("10":#fff1f1,
-        "20":#ffd7d9,
-        "30":#ffb3b8,
-        "40":#ff8389,
-        "50":#fa4f56,
-        "60":#da1e28,
-        "70":#a2191f,
-        "80":#750e13,
-        "90":#530408,
-        "100":#2d0709),
-    "teal":("10":#d9fbfb,
-        "20":#9ef0f0,
-        "30":#3dddd9,
-        "40":#08bdba,
-        "50":#009d9a,
-        "60":#007d79,
-        "70":#005d5d,
-        "80":#004144,
-        "90":#022b30,
-        "100":#081a1c),
-    "yellow":("10":#fcf4d6,
-        "20":#fddc69,
-        "30":#f1c21b,
-        "40":#d2a106,
-        "50":#b28600,
-        "60":#8e6a00,
-        "70":#684e00,
-        "80":#483700,
-        "90":#302400,
-        "100":#1c1500),
-    "orange":("10":#fff2e8,
-        "20":#ffd9be,
-        "30":#ffb784,
-        "40":#ff832b,
-        "50":#eb6200,
-        "60":#ba4e00,
-        "70":#8a3800,
-        "80":#5e2900,
-        "90":#3e1a00,
-        "100":#231000)
+    "white":#fff,
+    "transparent":#ffffff00,
+    "blue" : (10 : #EDF5FF,
+        20 : #d0e2ff,
+        30:#a6c8ff,
+        40:#78a9ff,
+        50:#5699ff,
+        60:#0f62fe,
+        65:#0353e9, // blue 60 hover
+        70:#0049ce,
+        80:#002d9c,
+        90:#001d6c,
+        100:#001141),
+    "gray":(10:#f4f4f4,
+        15:#e5e5e5, // gray 10 hover
+        20:#e0e0e0,
+        25:#cacaca,
+        30:#c6c6c6,
+        40:#a8a8a8,
+        50:#8d8d8d,
+        60:#525252,
+        70:#525252,
+        75:#4c4c4c, // gray 80 hover
+        80:#393939,
+        90:#262626,
+        100:#161616),
+    "cool-gray":(10:#f2f4f8,
+        20:#dde1e6,
+        30:#c1c7cd,
+        40:#a2a9b0,
+        50:#878d96,
+        60:#697077,
+        70:#4d5358,
+        80:#343a3f,
+        90:#21272a,
+        100:#121619),
+    "warm-gray":(10:#f7f3f2,
+        20:#e5e0df,
+        30:#cac5c4,
+        40:#ada8a8,
+        50:#8f8b8b,
+        60:#726e6e,
+        70:#565151,
+        80:#3c3838,
+        90:#272525,
+        100:#171414),
+    "cyan":(10:#e5f6ff,
+        20:#bae6ff,
+        30:#82cfff,
+        40:#33b1ff,
+        50:#1192e8,
+        60:#0072c3,
+        70:#00539a,
+        80:#003a6d,
+        90:#012749,
+        100:#061727),
+    "green":(10:#defbe6,
+        20:#a7f0ba,
+        30:#6fdc8c,
+        40:#42be65,
+        50:#24a148,
+        60:#198038,
+        70:#0e6027,
+        80:#044317,
+        90:#022d0d,
+        100:#071908),
+    "magenta":(10:#fff0f7,
+        20:#ffd6e8,
+        30:#ffafd2,
+        40:#ff7eb6,
+        50:#ee5396,
+        60:#d02670,
+        70:#9f1853,
+        80:#740937,
+        90:#510224,
+        100:#2a0a18),
+    "purple":(10:#f6f2ff,
+        20:#e8daff,
+        30:#d4bbff,
+        40:#be95ff,
+        50:#a56eff,
+        60:#8a3ffc,
+        70:#6929c4,
+        80:#491d8b,
+        90:#31135e,
+        100:#1c0f30),
+    "red":(10:#fff1f1,
+        20:#ffd7d9,
+        30:#ffb3b8,
+        40:#ff8389,
+        50:#fa4f56,
+        60:#da1e28,
+        65:#ba1b23, // red 60 hover
+        70:#a2191f,
+        80:#750e13,
+        90:#530408,
+        100:#2d0709),
+    "teal":(10:#d9fbfb,
+        20:#9ef0f0,
+        30:#3dddd9,
+        40:#08bdba,
+        50:#009d9a,
+        60:#007d79,
+        70:#005d5d,
+        80:#004144,
+        90:#022b30,
+        100:#081a1c),
+    "yellow":(10:#fcf4d6,
+        20:#fddc69,
+        30:#f1c21b,
+        40:#d2a106,
+        50:#b28600,
+        60:#8e6a00,
+        70:#684e00,
+        80:#483700,
+        90:#302400,
+        100:#1c1500),
+    "orange":(10:#fff2e8,
+        20:#ffd9be,
+        30:#ffb784,
+        40:#ff832b,
+        50:#eb6200,
+        60:#ba4e00,
+        70:#8a3800,
+        80:#5e2900,
+        90:#3e1a00,
+        100:#231000)
 );
+// * BACKGROUND
+$background: map.get($colors, white);
+// $background-active : #8d8d8d80; //opacity 50
+$background-active: color.adjust(map.get($colors, "gray", 50), $alpha: -0.5);
+$background-hover: color.adjust(map.get($colors, "gray", 50), $alpha: -0.88);
+$background-selected: color.adjust(map.get($colors, "gray", 50), $alpha: -0.8);
+$background-selected-hover: color.adjust(map.get($colors, "gray", 50), $alpha: -0.68);
+$background-brand: map.get($colors, "blue", 60);
+$background-inverse: map.get($colors, "gray", 80);
+$background-inverse-hover: #4c4c4c;
 
-$color-primary: map.get($colors, "blue", "70");
+// * TEXT
+$text-primary: map.get($colors, "gray", 100); //Primary body copy; Headers; Hover text color $text-secondary; Selected text color
+$text-secondary: map.get($colors, "gray", 70); //Secondary text color; input labels color; Unselected text color
+$text-placeholder: map.get($colors, "gray", 40);
+$text-on-color: map.get($colors, "white"); //Text on interactive colors
+$text-helper: map.get($colors, "gray", 60); //Tertiary text; Help text
+$text-error: map.get($colors, "red", 60);
+$text-inverse: map.get($colors, "white"); //Text color on $background-inverse
+$text-disabled: color.adjust(map.get($colors, "gray", 100), $alpha: -0.75);
+$text-on-color-disabled: map.get($colors, "gray", 50);
+
+// * BUTTONS
+$button-primary: map.get($colors, "blue", 60);
+$button-primary-hover: map.get($colors, "blue", 65);
+$button-primary-active: map.get($colors, "blue", 80);
+
+$button-secondary: map.get($colors, "gray", 80);
+$button-secondary-hover: map.get($colors, "gray", 75);
+$button-secondary-active: map.get($colors, "gray", 60);
+
+$button-tertiary: $button-primary;
+$button-tertiary-hover: $button-primary-hover;
+$button-tertiary-active: $button-primary-active;
+
+$button-danger-primary: map.get($colors, "red", 60);
+$button-danger-secondary: map.get($colors, "red", 60);
+$button-danger-hover: map.get($colors, "red", 65);
+$button-danger-active: map.get($colors, "red", 80);
+
+$button-separator: map.get($colors, "gray", 20);
+$button-disabled: map.get($colors, "gray", 30);
+
+// * LINK
+$link-primary: map.get($colors, "blue", 60);
+$link-primary-hover: map.get($colors, "blue", 70);
+$link-secondary: map.get($colors, "blue", 70);
+$link-inverse: map.get($colors, "blue", 40);
+$link-visited: map.get($colors, "purple", 60);
+
+// * LAYER
+// TODO : Faire des boucles pour ne pas se repeter ! 
+$layer-01: map.get($colors, "gray", 10);
+$layer-02: map.get($colors, "white");
+$layer-03: map.get($colors, "gray", 30);
+
+$layer-hover-01 : map.get($colors, "gray", 15);
+$layer-hover-02 : map.get($colors, "gray", 15);
+$layer-hover-03 : map.get($colors, "gray", 15);
+
+$layer-active-01: map.get($colors, "gray", 30);
+$layer-active-02: map.get($colors, "gray", 30);
+$layer-active-03: map.get($colors, "gray", 30);
+
+$layer-selected-01: map.get($colors, "gray", 20);
+$layer-selected-02: map.get($colors, "gray", 20);
+$layer-selected-03: map.get($colors, "gray", 20);
+
+$layer-selected-hover-01: map.get($colors, "gray", 25);
+$layer-selected-hover-02: map.get($colors, "gray", 25);
+$layer-selected-hover-03: map.get($colors, "gray", 25);
+
+$layer-selected-disabled: map.get($colors, "gray", 50);
+
+// * FIELD
+$field-01: map.get($colors, "gray", 10);
+$field-02: map.get($colors, "white");
+$field-03: map.get($colors, "gray", 10);
+$field-hover-01 : map.get($colors, "gray", 15);
+$field-hover-02 : map.get($colors, "gray", 15);
+$field-hover-03 : map.get($colors, "gray", 15);
+
+// * SUPPORT
+$support-error: map.get($colors, "red", 60);
+$support-success: map.get($colors, "green", 60);
+$support-warning: map.get($colors, "yellow", 30);
+$support-info: map.get($colors, "blue", 70);
+
+$support-error-inverse: map.get($colors, "red", 50);
+$support-success-inverse: map.get($colors, "green", 40);
+$support-warning-inverse: map.get($colors, "yellow", 30);
+$support-info-inverse: map.get($colors, "blue", 50);
+
+$support-caution-major: map.get($colors, "orange", 40);
+$support-caution-minor: map.get($colors, "yellow", 30);
+
+$support-undefined: map.get($colors, "purple", 60);
+
+// * FOCUS
+$focus: map.get($colors, "blue", 60);
+$focus-inset: map.get(colors, "white");
+$focus-inverse: map.get(colors, "white");
